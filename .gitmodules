@@ -1,0 +1,6 @@
+[submodule "cbai-task-management-fe"]
+	path = cbai-task-management-fe
+	url = https://github.com/BoonHock/cbai-task-management-fe.git
+[submodule "cbai-task-management-be"]
+	path = cbai-task-management-be
+	url = https://github.com/BoonHock/cbai-task-management-be.git
