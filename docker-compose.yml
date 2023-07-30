@@ -1,0 +1,48 @@
+version: "3.8"
+
+services:
+  # postgres:
+  #   container_name: postgres
+  #   image: postgres:15.2
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: postgres
+  #   volumes:
+  #     - cbai-postgres:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+
+  # cbai-task-manangement-be:
+  #   container_name: cbai-task-manangement-be
+  #   build: 
+  #     context: ./cbai-task-manangement-be
+  #   depends_on:
+  #     - postgres
+  #   environment:
+  #     DB_HOST: postgres
+  #     DB_PORT: 5432
+  #     DB_USER: postgres
+  #     DB_PW: postgres
+  #     DB_NAME: postgres
+  #   ports:
+  #     - "3000:3000"
+  #   volumes:
+  #     - ./cbai-task-manangement-be:/app
+  #     - /app/node_modules
+  #   command: [ npm, run, start:dev ]
+
+  cbai-task-management-fe:
+    container_name: cbai-task-management-fe
+    build:
+      context: ./cbai-task-management-fe
+    # depends_on:
+    #   - cbai-task-manangement-be
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./cbai-task-management-fe:/app
+      - /app/node_modules
+    # command: [ npm, start ]
+
+volumes:
+  cbai-task-management-postgres: null
